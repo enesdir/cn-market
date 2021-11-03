@@ -1,0 +1,68 @@
+{
+  "name": "ecommerce-application",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "author": "codenuru",
+  "keywords": [
+    "react",
+    "hooks",
+    "firebase"
+  ],
+  "engines": {
+    "node": ">=14.x",
+    "yarn": ">=1.x"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "postbuild": "next-sitemap --config next-sitemap.config.js",
+    "start": "next start",
+    "firebase": "firebase emulators:start",
+    "lint": "next lint",
+    "lint:fix": "eslint src --fix && yarn format",
+    "format": "prettier --write src",
+    "up-latest": "yarn upgrade-interactive --latest",
+    "release": "standard-version",
+    "push-release": "git push --follow-tags origin main",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^1.6.10",
+    "@emotion/react": "^11.5.0",
+    "@emotion/styled": "^11.3.0",
+    "firebase": "^9.2.0",
+    "formik": "^2.2.9",
+    "framer-motion": "^5.1.0",
+    "next": "^12.0.2",
+    "next-pwa": "^5.4.0",
+    "next-seo": "^4.28.1",
+    "react": "^18.0.0-alpha-00ced1e2b-20211102",
+    "react-dom": "^18.0.0-alpha-00ced1e2b-20211102",
+    "react-icons": "^4.3.1",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@commitlint/config-conventional": "^14.1.0",
+    "@types/react": "^17.0.34",
+    "@typescript-eslint/eslint-plugin": "^5.3.0",
+    "commitlint": "^14.1.0",
+    "eslint": "^8.1.0",
+    "eslint-config-next": "^12.0.2",
+    "husky": "^7.0.4",
+    "lint-staged": "^11.2.6",
+    "next-sitemap": "^1.6.203",
+    "prettier": "^2.4.1",
+    "standard-version": "^9.3.2",
+    "typescript": "^4.4.4"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "eslint --max-warnings=0",
+      "prettier --write"
+    ],
+    "src/**/*.{json,css,scss,md}": [
+      "prettier --write"
+    ]
+  }
+}

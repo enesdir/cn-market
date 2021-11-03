@@ -1,0 +1,53 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "baseUrl": "src",
+    "paths": {
+      "@app/*": [
+        "/*"
+      ],
+      "@lib/*": [
+        "lib/*"
+      ],
+      "@contexts/*": [
+        "contexts/*"
+      ],
+      "@components/*": [
+        "components/*"
+      ],
+      "@utils/*": [
+        "src/utils/*"
+      ],
+      "@graphql/*": [
+        "src/graphql/*"
+      ]
+    },
+    "incremental": true
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src",
+    "commitlint.config.js"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
