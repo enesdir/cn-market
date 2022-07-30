@@ -1,16 +1,5 @@
-import {
-  Box,
-  Stack,
-  HStack,
-  Text,
-  Heading,
-  Divider,
-  List,
-  ListIcon,
-  ListItem,
-  Button,
-} from '@chakra-ui/react';
-import { FaLongArrowAltRight, FaCheckCircle } from 'react-icons/fa';
+import { Box, Button, Divider, Heading, HStack, List, ListIcon, ListItem, Stack, Text } from '@chakra-ui/react';
+import { FaCheckCircle, FaLongArrowAltRight } from 'react-icons/fa';
 
 interface PricingCardProps {
   name: string;
@@ -56,7 +45,7 @@ export function PricingCard({ popular, name, price, info = '', features = [] }: 
       </HStack>
       <Divider borderColor="blackAlpha.500" />
       <List flex="1">
-        {features.map(feat => (
+        {features.map((feat) => (
           <ListItem key={Math.random()}>
             <ListIcon as={FaCheckCircle} color="gray.400" />
             {feat}

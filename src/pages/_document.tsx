@@ -1,11 +1,5 @@
 import { ColorModeScript } from '@chakra-ui/react';
-import NextDocument, { Html, Head, Main, NextScript } from 'next/document';
-
-/**
- * @todo: remove this comment below when ready
- * ref: https://github.com/vercel/next.js/issues/13712#issuecomment-910409023
- * */
-// eslint-disable-next-line @next/next/no-document-import-in-page
+import NextDocument, { Head, Html, Main, NextScript } from 'next/document';
 
 const APP_NAME = 'ecommerce-application';
 const APP_DESCRIPTION = 'ECommerce is a example of shoping app with firebase';
@@ -13,7 +7,7 @@ const APP_DESCRIPTION = 'ECommerce is a example of shoping app with firebase';
 export default class Document extends NextDocument {
   render() {
     return (
-      <Html lang="en">
+      <Html lang="en" dir="ltr">
         <Head>
           <meta name="application-name" content={APP_NAME} />
           <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -24,14 +18,8 @@ export default class Document extends NextDocument {
           <meta name="mobile-web-app-capable" content="yes" />
           <meta name="theme-color" content="#FFFFFF" />
           {/* https://nextjs.org/docs/basic-features/font-optimization */}
-          <link
-            href="https://fonts.googleapis.com/css2?family=Roboto&display=optional"
-            rel="stylesheet"
-          />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Krona+One&display=optional"
-            rel="stylesheet"
-          />
+          <link href="https://fonts.googleapis.com/css2?family=Roboto&display=optional" rel="stylesheet" />
+          <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=optional" rel="stylesheet" />
           {/* add your own app-icon */}
           {/* <link
             rel="apple-touch-icon"
@@ -42,7 +30,7 @@ export default class Document extends NextDocument {
           <link rel="manifest" href="/manifest.json" />
         </Head>
         <body>
-          <ColorModeScript />
+          <ColorModeScript initialColorMode="system" />
           <Main />
           <NextScript />
         </body>

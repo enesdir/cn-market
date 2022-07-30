@@ -3,9 +3,10 @@ import { useEffect } from 'react';
 import React from 'react';
 import { FaFacebook, FaGithub, FaGoogle } from 'react-icons/fa';
 
-import { DividerWithText } from '@components/auth/DividerWithText';
-import SocialButton from '@components/auth/SocialButton';
-import { useAuth } from '@contexts/AuthProvider';
+import { useAuth } from '@/contexts/AuthProvider';
+
+import { DividerWithText } from '@/components/auth/DividerWithText';
+import SocialButton from '@/components/auth/SocialButton';
 
 function SignInProviders() {
   const toast = useToast();

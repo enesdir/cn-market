@@ -1,6 +1,6 @@
 import { useColorModeValue } from '@chakra-ui/system';
 
-import { NextChakraLink, NextChakraLinkProps } from '@components/NextChakraLink';
+import { NextChakraLink, NextChakraLinkProps } from '@/components/NextChakraLink';
 
 export const AuthLayoutLink = (props: NextChakraLinkProps) => (
   <NextChakraLink

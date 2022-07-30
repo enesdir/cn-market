@@ -1,19 +1,8 @@
-import {
-  Box,
-  Flex,
-  FormControl,
-  FormLabel,
-  HStack,
-  Select,
-  Tabs,
-  TabList,
-  Tab,
-  useMediaQuery,
-} from '@chakra-ui/react';
+import { Box, Flex, FormControl, FormLabel, HStack, Select, Tab, TabList, Tabs, useMediaQuery } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { ReactNode } from 'react';
 
-import { useStore } from '@contexts/StoreProvider';
+import { useStore } from '@/contexts/StoreProvider';
 
 type Props = {
   children: ReactNode;
@@ -69,9 +58,7 @@ const Main = ({ children }: Props) => {
             variant="unstyled"
             size="sm"
             mb={5}
-            defaultIndex={
-              router.pathname === '/store' ? 0 : router.pathname === '/store/saved' ? 1 : undefined
-            }
+            defaultIndex={router.pathname === '/store' ? 0 : router.pathname === '/store/saved' ? 1 : undefined}
           >
             <TabList bg="blue.50" rounded="md">
               <Tab

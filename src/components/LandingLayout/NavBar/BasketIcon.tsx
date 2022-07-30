@@ -1,9 +1,9 @@
-import { IconButton, Icon, chakra, useBreakpointValue } from '@chakra-ui/react';
+import { chakra, Icon, IconButton, useBreakpointValue } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { HiOutlineShoppingCart } from 'react-icons/hi';
 
-import { useStore } from '@contexts/StoreProvider';
+import { useStore } from '@/contexts/StoreProvider';
 
 export default function BasketIcon() {
   const { cartItemCount } = useStore();

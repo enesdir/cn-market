@@ -1,4 +1,4 @@
-import { NextChakraLink } from '@components/NextChakraLink';
+import { NextChakraLink } from '@/components/NextChakraLink';
 
 export interface FooterLinkProps {
   text: string;

@@ -1,8 +1,9 @@
 import { useRouter } from 'next/router';
 import { ReactNode, useEffect } from 'react';
 
-import { PUBLIC_ROUTES } from '@components/RouteWrapper';
-import { useAuth } from '@contexts/AuthProvider';
+import { useAuth } from '@/contexts/AuthProvider';
+
+import { PUBLIC_ROUTES } from '@/components/RouteWrapper';
 
 type AuthWrapperProps = {
   children: ReactNode;

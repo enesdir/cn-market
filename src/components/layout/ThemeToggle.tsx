@@ -1,9 +1,9 @@
-import { IconButton, useColorMode, IconButtonProps } from '@chakra-ui/react';
+import { IconButton, IconButtonProps, useColorMode } from '@chakra-ui/react';
 import { HiMoon, HiSun } from 'react-icons/hi';
 
 type ColorModeSwitcherProps = Omit<IconButtonProps, 'aria-label'>;
 
-const ThemeToggle: React.FC<ColorModeSwitcherProps> = props => {
+const ThemeToggle: React.FC<ColorModeSwitcherProps> = (props) => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (

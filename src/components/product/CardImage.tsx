@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { ReactElement } from 'react';
 import { AiOutlineStar } from 'react-icons/ai';
 
-import { ButtonOpaque } from '@components/common/Button/ButtonOpaque';
+import { ButtonOpaque } from '@/components/common/Button/ButtonOpaque';
 
 interface ImageProps {
   productId?: string | number;

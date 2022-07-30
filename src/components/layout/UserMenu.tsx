@@ -1,26 +1,20 @@
 import {
+  Avatar,
+  Button,
+  Icon,
   Menu,
   MenuButton,
-  Avatar,
-  MenuList,
-  MenuItem,
   MenuDivider,
+  MenuItem,
+  MenuList,
   useColorMode,
-  Icon,
-  Button,
   useMediaQuery,
 } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import React from 'react';
-import {
-  HiMoon,
-  HiSun,
-  HiOutlineLogout,
-  HiOutlinePresentationChartLine,
-  HiChevronDown,
-} from 'react-icons/hi';
+import { HiChevronDown, HiMoon, HiOutlineLogout, HiOutlinePresentationChartLine, HiSun } from 'react-icons/hi';
 
-import { useAuth } from '@contexts/AuthProvider';
+import { useAuth } from '@/contexts/AuthProvider';
 
 export default function UserMenu() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -28,11 +22,11 @@ export default function UserMenu() {
   const [isLargerThan567] = useMediaQuery('(min-width: 567px)');
   const router = useRouter();
 
-  const handleClick = e => {
+  const handleClick = (e) => {
     e.preventDefault();
     router.push('/my');
   };
-  const avatar = <Avatar size={'sm'} name={currentUser?.displayName} src={currentUser?.photoURL} />;
+  const avatar = <Avatar size="sm" name={currentUser?.displayName} src={currentUser?.photoURL} />;
   const largeButton = (
     <MenuButton
       as={Button}

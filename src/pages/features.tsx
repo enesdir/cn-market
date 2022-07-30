@@ -1,9 +1,9 @@
-import { Box, Divider, Flex } from '@chakra-ui/layout';
+import { Box, Divider } from '@chakra-ui/layout';
 import React from 'react';
 
-import { FeaturesHero, TwoColumns } from '@components/features';
-import Modules from '@components/features/Modules';
-import LandingLayout from '@components/LandingLayout';
+import { FeaturesHero, TwoColumns } from '@/components/features';
+import Modules from '@/components/features/Modules';
+import LandingLayout from '@/components/LandingLayout';
 function Features() {
   return (
     <React.Fragment>

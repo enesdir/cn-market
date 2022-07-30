@@ -1,4 +1,4 @@
-import { Box, Flex, Avatar, Text, Tooltip, useColorModeValue } from '@chakra-ui/react';
+import { Avatar, Box, Flex, Text, Tooltip, useColorModeValue } from '@chakra-ui/react';
 
 interface UserDetails {
   fullName: string;
@@ -30,7 +30,7 @@ export function CommentCard({ comment, userDetails, ownerId, date }: CommentCard
             </Text>
           </Flex>
           <Flex overflowX="auto" className="unscroll" mt={1}>
-            <Tooltip label={date} aria-label="Specific timestamp" placement={'auto-end'}>
+            <Tooltip label={date} aria-label="Specific timestamp" placement="auto-end">
               <Text
                 userSelect="none"
                 whiteSpace="nowrap"

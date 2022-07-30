@@ -1,16 +1,7 @@
-import {
-  Flex,
-  Heading,
-  Text,
-  Button,
-  VStack,
-  Icon,
-  useBreakpointValue,
-  useToast,
-} from '@chakra-ui/react';
-import { HiStar, HiOutlineHeart, HiHeart } from 'react-icons/hi';
+import { Button, Flex, Heading, Icon, Text, useBreakpointValue, useToast, VStack } from '@chakra-ui/react';
+import { HiHeart, HiOutlineHeart, HiStar } from 'react-icons/hi';
 
-import { useStore, ProductType } from '@contexts/StoreProvider';
+import { ProductType, useStore } from '@/contexts/StoreProvider';
 
 interface Props {
   product: ProductType;
@@ -48,13 +39,7 @@ function PopularItem({ product }: Props) {
             {Math.floor(Math.random() * 10) + 1}
           </Text>
         </Flex>
-        <Text
-          w="90%"
-          isTruncated
-          fontWeight="medium"
-          fontSize={{ base: 'sm', md: 'md' }}
-          color="gray.500"
-        >
+        <Text w="90%" isTruncated fontWeight="medium" fontSize={{ base: 'sm', md: 'md' }} color="gray.500">
           {product.description}
         </Text>
         <Heading fontSize={{ base: 'md', md: 'xl' }}>£ {product.price}</Heading>

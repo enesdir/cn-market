@@ -7,12 +7,7 @@ interface IconPairProps extends StackProps {
   iconPairText: string;
 }
 
-export const IconPair = ({
-  icon,
-  iconPairText,
-  badgeText,
-  ...props
-}: IconPairProps): ReactElement => (
+export const IconPair = ({ icon, iconPairText, badgeText, ...props }: IconPairProps): ReactElement => (
   <HStack textStyle="labelLight" align="center" spacing={2} {...props}>
     <Icon as={icon} boxSize={6} />
     <Text>{iconPairText}</Text>

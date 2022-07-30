@@ -1,27 +1,24 @@
 import {
-  Flex,
-  Box,
   Badge,
-  Button,
-  Collapse,
-  Heading,
-  HStack,
-  Tag,
-  Stack,
-  StackDivider,
-  Text,
-  VStack,
-  useDisclosure,
+  Box,
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
+  Collapse,
+  Flex,
+  Heading,
+  Stack,
+  Tag,
+  Text,
+  useDisclosure,
 } from '@chakra-ui/react';
 import Image from 'next/image';
 import { FaAngleRight } from 'react-icons/fa';
 
-import { CommentCard, CommentCardProps } from '@components/CommentCard';
-import CardFooter from '@components/product/CardFooter';
-import { ProductType } from '@contexts/StoreProvider';
+import { ProductType } from '@/contexts/StoreProvider';
+
+import { CommentCard, CommentCardProps } from '@/components/CommentCard';
+import CardFooter from '@/components/product/CardFooter';
 
 const comments: CommentCardProps[] = [
   {
@@ -40,19 +37,12 @@ const comments: CommentCardProps[] = [
 interface ProductProps {
   product: ProductType;
 }
-import { useStore } from '@contexts/StoreProvider';
 
 export default function Product({ product }: ProductProps) {
   const { isOpen, onToggle } = useDisclosure();
   return (
     <Box p={3}>
-      <Breadcrumb
-        fontSize="sm"
-        spacing="8px"
-        mb={6}
-        color="gray.500"
-        separator={<FaAngleRight color="gray.500" />}
-      >
+      <Breadcrumb fontSize="sm" spacing="8px" mb={6} color="gray.500" separator={<FaAngleRight color="gray.500" />}>
         <BreadcrumbItem>
           <BreadcrumbLink href="#">Home</BreadcrumbLink>
         </BreadcrumbItem>
@@ -127,14 +117,7 @@ export default function Product({ product }: ProductProps) {
           <Text>{product?.description}</Text>
           <Flex justify="flex-end"></Flex>
         </Box>
-        <Box
-          boxShadow="base"
-          rounded="md"
-          border="1px solid"
-          borderColor="gray.200"
-          p={3}
-          onClick={onToggle}
-        >
+        <Box boxShadow="base" rounded="md" border="1px solid" borderColor="gray.200" p={3} onClick={onToggle}>
           <Heading as="h3" fontSize="2xl" mb={2}>
             Reviews({comments.length})
           </Heading>

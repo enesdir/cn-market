@@ -1,7 +1,7 @@
 import { Box, BoxProps } from '@chakra-ui/react';
-import { motion, HTMLMotionProps } from 'framer-motion';
+import { HTMLMotionProps, motion } from 'framer-motion';
 
-import { Merge } from 'types/merge';
+import { Merge } from '@/types/merge';
 
 type MotionBoxProps = Merge<BoxProps, HTMLMotionProps<'div'>>;
 

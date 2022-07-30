@@ -1,18 +1,10 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import {
-  Flex,
-  FlexProps,
-  Icon,
-  Button,
-  useBreakpointValue,
-  useToast,
-  useColorModeValue,
-} from '@chakra-ui/react';
+import { Button, Flex, FlexProps, Icon, useBreakpointValue, useColorModeValue, useToast } from '@chakra-ui/react';
 import React from 'react';
-import { HiOutlineHeart, HiHeart } from 'react-icons/hi';
+import { HiHeart, HiOutlineHeart } from 'react-icons/hi';
 
-import { useStore, ProductType } from '@contexts/StoreProvider';
+import { ProductType, useStore } from '@/contexts/StoreProvider';
 
 interface CardFooterProps extends FlexProps {
   product: ProductType;

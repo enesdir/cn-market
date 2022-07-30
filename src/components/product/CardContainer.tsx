@@ -1,4 +1,4 @@
-import { VStack, BoxProps } from '@chakra-ui/react';
+import { BoxProps, VStack } from '@chakra-ui/react';
 import * as React from 'react';
 
 import { CardBadge } from './CardBadge';

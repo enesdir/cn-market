@@ -3,16 +3,16 @@
 // import { useContext } from 'react';
 
 // import { searchTags } from '../../mockDB/db';
-import { AnimatePresence, LazyMotion } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 
-import LandingLayout from '@components/LandingLayout';
-import Navbar from '@components/LandingLayout/NavBar';
-import Main from '@components/product/Main';
-import SavedItems from '@components/store/SavedItems';
 // import LoadingPage from '@components/LoadingPage';
 // import Main from '@components/product/Main';
 // import ProductsGrid from '@components/product/ProductGrid';
-import { StoreProvider, useStore } from '@contexts/StoreProvider';
+import { useStore } from '@/contexts/StoreProvider';
+
+import LandingLayout from '@/components/LandingLayout';
+import Main from '@/components/product/Main';
+import SavedItems from '@/components/store/SavedItems';
 
 const StoreSaved = () => {
   const { isLoading } = useStore();

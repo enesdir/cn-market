@@ -1,4 +1,4 @@
-import { Stack, Skeleton } from '@chakra-ui/react';
+import { Skeleton, Stack } from '@chakra-ui/react';
 
 export function LoadingProduct() {
   return (

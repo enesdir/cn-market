@@ -20,7 +20,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
   with `next-seo` and `next-sitemap`. you'll need to reconfigure or tinker with it to get it right according to your needs, but it's there if you need it.
 
-- 🎨  Landing, Store, Features, Pricing responsive layout configured
+- 🎨 Landing, Store, Features, Pricing responsive layout configured
 
 ## Getting Started
 

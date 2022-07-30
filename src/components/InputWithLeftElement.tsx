@@ -1,15 +1,15 @@
 import {
   Flex,
   FormControl,
+  FormControlProps,
+  FormErrorMessage,
   FormLabel,
+  Icon,
   Input,
   InputGroup,
+  InputLeftElement,
   InputProps,
   useMergeRefs,
-  InputLeftElement,
-  Icon,
-  FormErrorMessage,
-  FormControlProps,
 } from '@chakra-ui/react';
 import { As } from '@chakra-ui/system';
 import * as React from 'react';

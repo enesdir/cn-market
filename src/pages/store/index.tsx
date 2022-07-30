@@ -1,10 +1,9 @@
 import dynamic from 'next/dynamic';
 import { Suspense } from 'react';
 
-import LandingLayout from '@components/LandingLayout';
-import Navbar from '@components/LandingLayout/NavBar';
-import { LoadingProduct } from '@components/Loading/';
-import Main from '@components/product/Main';
+import LandingLayout from '@/components/LandingLayout';
+import { LoadingProduct } from '@/components/Loading/';
+import Main from '@/components/product/Main';
 // import PopularItemsList from '@components/store/Store';
 
 const PopularItemsList = dynamic(() => import('../../components/store/Store'), {

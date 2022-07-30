@@ -1,13 +1,4 @@
-import {
-  Box,
-  HStack,
-  Icon,
-  Image,
-  Link,
-  Stack,
-  Text,
-  useColorModeValue as mode,
-} from '@chakra-ui/react';
+import { Box, HStack, Icon, Image, Link, Stack, Text, useColorModeValue as mode } from '@chakra-ui/react';
 import * as React from 'react';
 import { FiGift } from 'react-icons/fi';
 

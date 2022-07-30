@@ -1,17 +1,18 @@
-import { Box, Stack, Button, Flex, Heading, Text, useToast } from '@chakra-ui/react';
+import { Box, Button, Flex, Heading, Stack, Text, useToast } from '@chakra-ui/react';
 import { useFormik } from 'formik';
-import { NextSeo } from 'next-seo';
 import { useRouter } from 'next/router';
+import { NextSeo } from 'next-seo';
 import { useState } from 'react';
 import { HiOutlineMail } from 'react-icons/hi';
 
-import AuthLayout from '@components/auth/AuthLayout';
-import { AuthLayoutLink } from '@components/auth/AuthLayoutLink';
-import LoginProviders from '@components/auth/LoginProviders';
-import { PasswordField } from '@components/auth/PasswordField';
-import { InputWithLeftElement } from '@components/InputWithLeftElement';
-import { AnimatedLogo } from '@components/Logo/';
-import { useAuth } from '@contexts/AuthProvider';
+import { useAuth } from '@/contexts/AuthProvider';
+
+import AuthLayout from '@/components/auth/AuthLayout';
+import { AuthLayoutLink } from '@/components/auth/AuthLayoutLink';
+import LoginProviders from '@/components/auth/LoginProviders';
+import { PasswordField } from '@/components/auth/PasswordField';
+import { InputWithLeftElement } from '@/components/InputWithLeftElement';
+import { AnimatedLogo } from '@/components/Logo/';
 
 type LoginFormType = {
   email: string;
@@ -36,7 +37,7 @@ export default function Login() {
           setIsLoading(false);
           router.push('/');
         })
-        .catch(err => {
+        .catch((err) => {
           toast({
             description: err.message,
             position: 'top',
@@ -53,7 +54,7 @@ export default function Login() {
       <NextSeo title="Login" description="This will be the page meta description" />
       <Stack alignItems="center">
         <AnimatedLogo />
-        <Heading align={'center'} fontSize={'4xl'} pb="4">
+        <Heading align="center" fontSize="4xl" pb="4">
           Welcome back!
         </Heading>
       </Stack>
@@ -77,8 +78,8 @@ export default function Login() {
             </Box>
           </Flex>
           <Button
-            bg={'blue.400'}
-            color={'white'}
+            bg="blue.400"
+            color="white"
             _hover={{
               bg: 'blue.500',
             }}
@@ -88,7 +89,7 @@ export default function Login() {
           >
             Sign in
           </Button>
-          <Text fontSize={'sm'}>
+          <Text fontSize="sm">
             Not Registered
             <AuthLayoutLink href="/auth/register"> Create an account </AuthLayoutLink>
           </Text>

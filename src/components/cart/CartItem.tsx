@@ -1,25 +1,10 @@
-import {
-  Box,
-  Flex,
-  Text,
-  Image,
-  Input,
-  Button,
-  Select,
-  LinkBox,
-  VStack,
-  HStack,
-  LinkOverlay,
-  useNumberInput,
-  useToast,
-} from '@chakra-ui/react';
-import { useContext, ChangeEvent } from 'react';
+import { Button, Flex, Input, useNumberInput, useToast, VStack } from '@chakra-ui/react';
 import { BiTrash as TrashIcon } from 'react-icons/bi';
 import { BsHeart as HeartIcon } from 'react-icons/bs';
 import { BsHeartFill as HeartIconFill } from 'react-icons/bs';
 import { FaMinus, FaPlus } from 'react-icons/fa';
 
-import { useStore, ProductType } from '@contexts/StoreProvider';
+import { ProductType, useStore } from '@/contexts/StoreProvider';
 
 import { CartProductMeta } from './CartProductMeta';
 import { PriceTag } from './PriceTag';

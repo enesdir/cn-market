@@ -1,17 +1,16 @@
 import {
-  Box,
   Flex,
   FormControl,
   FormLabel,
+  Icon,
   IconButton,
   Input,
   InputGroup,
+  InputLeftElement,
   InputProps,
   InputRightElement,
   useDisclosure,
   useMergeRefs,
-  InputLeftElement,
-  Icon,
 } from '@chakra-ui/react';
 import * as React from 'react';
 import { HiEye, HiEyeOff, HiOutlineLockClosed } from 'react-icons/hi';

@@ -1,4 +1,4 @@
-import { Button, VisuallyHidden, ButtonProps } from '@chakra-ui/react';
+import { Button, ButtonProps, VisuallyHidden } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 
 interface Props extends ButtonProps {

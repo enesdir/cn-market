@@ -4,7 +4,7 @@ import { useContext } from 'react';
 export const useClient = <T>(context: React.Context<T | null>): T => {
   const client = useContext(context);
   if (!client) {
-    throw new Error("Failed to inject dependency. Using function must be used within related provider ");
+    throw new Error('Failed to inject dependency. Using function must be used within related provider ');
   }
 
   return client;

@@ -1,16 +1,8 @@
-import {
-  Button,
-  Flex,
-  Heading,
-  Link,
-  Stack,
-  Text,
-  useColorModeValue as mode,
-} from '@chakra-ui/react';
+import { Button, Flex, Heading, Link, Stack, Text, useColorModeValue as mode } from '@chakra-ui/react';
 import * as React from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 
-import { useStore } from '@contexts/StoreProvider';
+import { useStore } from '@/contexts/StoreProvider';
 
 import { formatPrice } from './PriceTag';
 
@@ -34,7 +26,7 @@ const OrderSummaryItem = (props: OrderSummaryItemProps) => {
 
 export const CartOrderSummary = () => {
   const { products, totalPrice } = useStore();
-  const cartItems = products?.filter(product => product.inCart === true);
+  const cartItems = products?.filter((product) => product.inCart === true);
   return (
     <Stack spacing="8" borderWidth="1px" rounded="lg" padding="8" width="full">
       <Heading size="md">Order Summary</Heading>
@@ -60,13 +52,7 @@ export const CartOrderSummary = () => {
           </Text>
         </Flex>
       </Stack>
-      <Button
-        colorScheme="blue"
-        size="lg"
-        fontSize="md"
-        rightIcon={<FaArrowRight />}
-        disabled={cartItems.length < 1}
-      >
+      <Button colorScheme="blue" size="lg" fontSize="md" rightIcon={<FaArrowRight />} disabled={cartItems.length < 1}>
         Checkout
       </Button>
     </Stack>

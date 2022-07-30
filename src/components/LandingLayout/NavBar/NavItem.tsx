@@ -1,8 +1,8 @@
-import { useColorModeValue, Box } from '@chakra-ui/react';
+import { Box, useColorModeValue } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import React, { ReactNode } from 'react';
 
-import { NextButtonLink } from '@components/NextButtonLink';
+import { NextButtonLink } from '@/components/NextButtonLink';
 
 import { NavigationListItem } from './NavigationListItem';
 
@@ -56,7 +56,7 @@ interface MenuItemProps {
 }
 
 function NavItem({ navitems }: MenuItemProps) {
-  const menuItems = navitems.map(navitem => (
+  const menuItems = navitems.map((navitem) => (
     <NavLink key={navitem.id} to={navitem.to}>
       {navitem.children}
     </NavLink>

@@ -1,4 +1,4 @@
-import { HStack, Text, TextProps, StackProps, useColorModeValue as mode } from '@chakra-ui/react';
+import { HStack, StackProps, Text, TextProps, useColorModeValue as mode } from '@chakra-ui/react';
 import * as React from 'react';
 
 interface PriceTagProps {
@@ -29,9 +29,7 @@ export const PriceTag = (props: PriceTagProps) => {
       <Price isOnSale={!!salePrice} textProps={priceProps}>
         {formatPrice(price, { currency })}
       </Price>
-      {salePrice && (
-        <SalePrice {...salePriceProps}>{formatPrice(salePrice, { currency })}</SalePrice>
-      )}
+      {salePrice && <SalePrice {...salePriceProps}>{formatPrice(salePrice, { currency })}</SalePrice>}
     </HStack>
   );
 };

@@ -1,7 +1,8 @@
-import BasketIcon from '@components/LandingLayout/NavBar/BasketIcon';
-import UserMenu from '@components/layout/UserMenu';
-import { NextButtonLink } from '@components/NextButtonLink';
-import { useAuth } from '@contexts/AuthProvider';
+import { useAuth } from '@/contexts/AuthProvider';
+
+import BasketIcon from '@/components/LandingLayout/NavBar/BasketIcon';
+import UserMenu from '@/components/layout/UserMenu';
+import { NextButtonLink } from '@/components/NextButtonLink';
 
 function SignupButton() {
   return (

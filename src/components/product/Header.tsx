@@ -1,8 +1,9 @@
-import { Box, Button, chakra, Flex, HStack, Avatar, Link } from '@chakra-ui/react';
+import { Avatar, Box, Button, chakra, Flex, HStack, Link } from '@chakra-ui/react';
 import { FaShoppingCart } from 'react-icons/fa';
 
-import { Logo } from '@components/Logo';
-import { useStore } from '@contexts/StoreProvider';
+import { useStore } from '@/contexts/StoreProvider';
+
+import { Logo } from '@/components/Logo';
 
 import SearchBar from './SearchBar';
 
@@ -24,13 +25,7 @@ const Header = () => {
       bg="white"
       boxShadow="base"
     >
-      <Flex
-        height="65px"
-        align="center"
-        px={[null, 2]}
-        py={[7, 9]}
-        justify={['space-between', null]}
-      >
+      <Flex height="65px" align="center" px={[null, 2]} py={[7, 9]} justify={['space-between', null]}>
         <Flex align="center">
           <Link to="/" _hover={{ textDecoration: 'none' }}>
             <Logo />
@@ -39,10 +34,7 @@ const Header = () => {
         <SearchBar display={['none', 'block']} />
         <Flex justify="space-between" align="center">
           <HStack spacing={[3, 5]}>
-            <Link
-              to={location.pathname === '/login' ? '/register' : '/login'}
-              _hover={{ textDecoration: 'none' }}
-            >
+            <Link to={location.pathname === '/login' ? '/register' : '/login'} _hover={{ textDecoration: 'none' }}>
               <Button
                 height={[8, 9]}
                 minW={[8, 9]}

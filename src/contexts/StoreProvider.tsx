@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { useToast } from '@chakra-ui/react';
-import { createContext, FC, ReactNode, useState, useEffect } from 'react';
+import { createContext, ReactNode, useEffect, useState } from 'react';
 
 import seed from './products.json';
 import { useClient } from './useClient';
@@ -39,8 +39,11 @@ export function useStore(): ContextType {
   const context = useClient(StoreContext);
   return context;
 }
+type StoreProviderProps = {
+  children: ReactNode;
+};
 // Provider component
-export const StoreProvider: FC<ReactNode> = ({ children }) => {
+export const StoreProvider = ({ children }: StoreProviderProps) => {
   const toast = useToast();
   const [products, setProducts] = useState<ProductType[]>([]);
   const [totalPrice, setTotalPrice] = useState(0);
@@ -64,18 +67,18 @@ export const StoreProvider: FC<ReactNode> = ({ children }) => {
 
   useEffect(() => {
     // Get products in cart
-    const productsInCart = products.filter(product => product.inCart === true);
-    const productPrices = productsInCart.map(product => +product.price * +product.quantity!);
+    const productsInCart = products.filter((product) => product.inCart === true);
+    const productPrices = productsInCart.map((product) => +product.price * +product.quantity!);
     setTotalPrice(productPrices.reduce((a, b) => a + b, 0));
     setCartItemCount(productsInCart.length);
     // Get saved products
-    const savedProducts = products.filter(product => product.isSaved === true);
+    const savedProducts = products.filter((product) => product.isSaved === true);
     setSavedItemsCount(savedProducts.length);
   }, [products]);
 
   const toggleSaved = (id: string | number) => {
-    setProducts(prevProducts =>
-      prevProducts.map(prevProduct =>
+    setProducts((prevProducts) =>
+      prevProducts.map((prevProduct) =>
         prevProduct.id === id ? { ...prevProduct, isSaved: !prevProduct.isSaved } : prevProduct
       )
     );
@@ -88,45 +91,37 @@ export const StoreProvider: FC<ReactNode> = ({ children }) => {
       duration: 1500,
       isClosable: true,
     });
-    setProducts(prevProducts =>
-      prevProducts.map(prevProduct =>
+    setProducts((prevProducts) =>
+      prevProducts.map((prevProduct) =>
         prevProduct.id === product.id ? { ...prevProduct, quantity: 1, inCart: true } : prevProduct
       )
     );
   };
 
   const deleteFromCart = (id: number | string) => {
-    setProducts(prevProducts =>
-      prevProducts.map(prevProduct =>
-        prevProduct.id === id ? { ...prevProduct, inCart: false } : prevProduct
-      )
+    setProducts((prevProducts) =>
+      prevProducts.map((prevProduct) => (prevProduct.id === id ? { ...prevProduct, inCart: false } : prevProduct))
     );
   };
 
   const setQuantity = (qty: string, id: number | string) => {
-    setProducts(prevProducts =>
-      prevProducts.map(prevProduct =>
-        prevProduct.id === id ? { ...prevProduct, quantity: qty } : prevProduct
-      )
+    setProducts((prevProducts) =>
+      prevProducts.map((prevProduct) => (prevProduct.id === id ? { ...prevProduct, quantity: qty } : prevProduct))
     );
   };
 
   const decrementQty = (id: number | string) => {
-    setProducts(prevProducts =>
-      prevProducts.map(prevProduct =>
-        prevProduct.id === id
-          ? { ...prevProduct, quantity: +prevProduct.quantity! - 1 }
-          : prevProduct
+    setProducts((prevProducts) =>
+      prevProducts.map((prevProduct) =>
+        prevProduct.id === id ? { ...prevProduct, quantity: +prevProduct.quantity! - 1 } : prevProduct
       )
     );
   };
 
   const incrementQty = (id: number | string) => {
-    setProducts(prevProducts =>
-      prevProducts.map(prevProduct =>
-        prevProduct.id === id
-          ? { ...prevProduct, quantity: +prevProduct.quantity! + 1 }
-          : prevProduct
+    setProducts((prevProducts) =>
+      prevProducts.map((prevProduct) =>
+        prevProduct.id === id ? { ...prevProduct, quantity: +prevProduct.quantity! + 1 } : prevProduct
       )
     );
   };
@@ -161,5 +156,5 @@ declare global {
 // Custom function to filter objects
 Object.filter = (obj, predicate) =>
   Object.keys(obj)
-    .filter(key => predicate(obj[key]))
+    .filter((key) => predicate(obj[key]))
     .reduce((res, key) => Object.assign(res, { [key]: obj[key] }), {});

@@ -1,23 +1,23 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import {
-  GoogleAuthProvider,
+  applyActionCode,
   createUserWithEmailAndPassword,
-  signInWithPopup,
-  updateProfile,
-  signInWithEmailAndPassword,
-  signOut,
+  GoogleAuthProvider,
+  onAuthStateChanged,
+  sendEmailVerification,
   sendPasswordResetEmail,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  signOut,
   updateEmail,
   updatePassword,
-  onAuthStateChanged,
+  updateProfile,
   User,
-  sendEmailVerification,
-  applyActionCode,
 } from 'firebase/auth';
 import { useRouter } from 'next/router';
-import { useState, useEffect, useCallback } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
-import { auth } from '@lib/firebase';
+import { auth } from '@/lib/firebase';
 
 import { IAuthContext } from './AuthProvider';
 
@@ -63,20 +63,16 @@ export function useProvideAuth() {
 
   const signInWithGoogle = useCallback(async (toast: any) => {
     return await signInWithPopup(auth, new GoogleAuthProvider())
-      .then(res => res)
-      .catch(err => showErrorToast(toast, err));
+      .then((res) => res)
+      .catch((err) => showErrorToast(toast, err));
   }, []);
 
   function updateDisplayName(displayName: string) {
-    return currentUser
-      ? updateProfile(currentUser, { displayName: displayName })
-      : Promise.reject('No user logged in');
+    return currentUser ? updateProfile(currentUser, { displayName: displayName }) : Promise.reject('No user logged in');
   }
 
   function updateUserPhoto(photoURL: string) {
-    return currentUser
-      ? updateProfile(currentUser, { photoURL: photoURL })
-      : Promise.reject('No user logged in');
+    return currentUser ? updateProfile(currentUser, { photoURL: photoURL }) : Promise.reject('No user logged in');
   }
 
   function updateUserEmail(email: string) {
@@ -84,9 +80,7 @@ export function useProvideAuth() {
   }
 
   function updateUserPassword(password: string) {
-    return currentUser
-      ? updatePassword(currentUser, password)
-      : Promise.reject('No user logged in');
+    return currentUser ? updatePassword(currentUser, password) : Promise.reject('No user logged in');
   }
 
   async function handleVerifyEmail(actionCode: string) {
@@ -107,7 +101,7 @@ export function useProvideAuth() {
   };
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, user => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
       setCurrentUser(user);
       // console.log(user);
       setLoading(false);

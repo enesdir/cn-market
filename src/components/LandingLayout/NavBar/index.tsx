@@ -1,19 +1,10 @@
-import {
-  Box,
-  Flex,
-  IconButton,
-  useDisclosure,
-  useColorModeValue,
-  VStack,
-  Container,
-  Collapse,
-} from '@chakra-ui/react';
+import { Box, Collapse, Container, Flex, IconButton, useColorModeValue, useDisclosure, VStack } from '@chakra-ui/react';
 import dynamic from 'next/dynamic';
 import { Suspense } from 'react';
 import { HiMenu, HiX } from 'react-icons/hi';
 
-import NavItem from '@components/LandingLayout/NavBar/NavItem';
-import { LogoWithText } from '@components/Logo/';
+import NavItem from '@/components/LandingLayout/NavBar/NavItem';
+import { LogoWithText } from '@/components/Logo/';
 
 import { NavigationList } from './NavigationList';
 
@@ -53,14 +44,9 @@ export default function Navbar(props: NavbarProps) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Box
-      as="nav"
-      bg={useColorModeValue('gray.100', 'gray.900')}
-      px={4}
-      boxShadow={{ base: 'md', md: 'none' }}
-    >
+    <Box as="nav" bg={useColorModeValue('gray.100', 'gray.900')} px={4} boxShadow={{ base: 'md', md: 'none' }}>
       <Container maxWidth="container.xl">
-        <Flex h={16} alignItems="center" justifyContent={'space-between'}>
+        <Flex h={16} alignItems="center" justifyContent="space-between">
           <IconButton
             size="md"
             variant="ghost"
@@ -72,21 +58,21 @@ export default function Navbar(props: NavbarProps) {
             display={{ base: 'flex', md: 'none' }}
             onClick={isOpen ? onClose : onOpen}
           />
-          <Flex alignItems="center" justifyContent={'start'}>
+          <Flex alignItems="center" justifyContent="start">
             <LogoWithText label={logoLabel} />
           </Flex>
-          <Flex alignItems="center" justifyContent={'end'}>
+          <Flex alignItems="center" justifyContent="end">
             <NavigationList display={{ base: 'none', md: 'flex' }}>
               <NavItem navitems={menuitems} />
             </NavigationList>
-            <Suspense fallback={'loading'}>
+            <Suspense fallback="loading">
               <RightSideItems basket={basket} />
             </Suspense>
           </Flex>
         </Flex>
         <Collapse in={isOpen} animateOpacity>
           <NavigationList pb={4} display={{ md: 'none' }}>
-            <VStack as={'nav'} spacing={4} flexDirection="column">
+            <VStack as="nav" spacing={4} flexDirection="column">
               <NavItem navitems={menuitems} />
             </VStack>
           </NavigationList>

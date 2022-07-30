@@ -1,7 +1,7 @@
 import { Box, Flex, Text } from '@chakra-ui/layout';
 import { BiBarChartAlt } from 'react-icons/bi';
 import { BsBuilding, BsFillPeopleFill } from 'react-icons/bs';
-import { FaFileContract, FaChartPie } from 'react-icons/fa';
+import { FaChartPie, FaFileContract } from 'react-icons/fa';
 import { RiPlantFill } from 'react-icons/ri';
 import { SiGlassdoor, SiMicrosoftonenote } from 'react-icons/si';
 
@@ -48,7 +48,7 @@ const Modules = () => {
         All Modules
       </Text>
       <Flex wrap="wrap">
-        {modules.map(mod => (
+        {modules.map((mod) => (
           <Module key={mod.text} text={mod.text} icon={mod.icon} />
         ))}
       </Flex>

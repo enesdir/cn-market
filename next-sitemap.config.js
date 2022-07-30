@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 const NextSitemapConfig = {
-  siteUrl: "ECommerce Application",
+  siteUrl: 'ECommerce Application',
   generateRobotsTxt: true,
 };
 

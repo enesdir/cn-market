@@ -1,4 +1,4 @@
-import { chakra, Box, Circle, Flex, HStack, Text, useColorModeValue } from '@chakra-ui/react';
+import { Box, chakra, Circle, Flex, HStack, Text, useColorModeValue } from '@chakra-ui/react';
 import * as React from 'react';
 import { FaQuoteRight } from 'react-icons/fa';
 
@@ -12,14 +12,10 @@ export function Testimonials() {
     <Box as="section">
       <Box maxW="3xl" mx="auto" px={{ base: '6', md: '8' }} pt="12" pb="16">
         <Flex direction="column" align="center" textAlign="center">
-          <QuoteIcon
-            color={useColorModeValue('gray.300', 'gray.600')}
-            fontSize={{ base: '3xl', md: '6xl' }}
-          />
+          <QuoteIcon color={useColorModeValue('gray.300', 'gray.600')} fontSize={{ base: '3xl', md: '6xl' }} />
           <Text fontSize={{ base: 'xl', md: '2xl' }} fontWeight="medium" mt="6">
-            &ldquo;Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita voluptas
-            culpa sapiente alias molestiae. Numquam corrupti in laborum sed rerum et
-            corporis.&rdquo;
+            &ldquo;Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita voluptas culpa sapiente alias
+            molestiae. Numquam corrupti in laborum sed rerum et corporis.&rdquo;
           </Text>
           <Quote
             name="Marrie Jones"
@@ -28,12 +24,7 @@ export function Testimonials() {
             mt="8"
           />
         </Flex>
-        <HStack
-          justify="center"
-          spacing="4"
-          mt="8"
-          color={useColorModeValue('gray.300', 'gray.600')}
-        >
+        <HStack justify="center" spacing="4" mt="8" color={useColorModeValue('gray.300', 'gray.600')}>
           <Circle w="3" h="3" bg="blue.500" />
           <Circle w="2" h="2" bg="currentColor" />
           <Circle w="2" h="2" bg="currentColor" />

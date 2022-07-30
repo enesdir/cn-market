@@ -1,7 +1,7 @@
 import { Flex, Heading, useColorModeValue } from '@chakra-ui/react';
 import React from 'react';
 
-import { Logo } from '@components/Logo/Logo';
+import { Logo } from '@/components/Logo/Logo';
 
 interface Props {
   label: string;

@@ -1,6 +1,6 @@
-import { Box, Container, SimpleGrid, Divider, Stack, useColorModeValue } from '@chakra-ui/react';
+import { Box, Container, Divider, SimpleGrid, Stack, useColorModeValue } from '@chakra-ui/react';
 
-import { Logo } from '@components/Logo';
+import { Logo } from '@/components/Logo';
 
 import FooterContainer, { IfooterElement } from './FooterContainer';
 import FooterText from './FooterText';
@@ -112,16 +112,12 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <Box
-      as="footer"
-      bg={useColorModeValue('gray.50', 'gray.900')}
-      color={useColorModeValue('gray.700', 'gray.200')}
-    >
-      <Container as={Stack} maxW={'6xl'} py={10}>
+    <Box as="footer" bg={useColorModeValue('gray.50', 'gray.900')} color={useColorModeValue('gray.700', 'gray.200')}>
+      <Container as={Stack} maxW="6xl" py={10}>
         <SimpleGrid templateColumns={{ sm: '1fr 1fr', md: '2fr 1fr 1fr 1fr 1fr' }} spacing={8}>
           <Stack spacing={6}>
             <Box>
-              <Logo h={'4rem'} />
+              <Logo h="4rem" />
             </Box>
             <Divider />
             <FooterText text={`© E-Commerce Application | ${year}. All rights reserved`} />

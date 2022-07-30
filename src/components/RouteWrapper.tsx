@@ -2,7 +2,7 @@ import { useToast } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { ReactNode, useEffect, useState } from 'react';
 
-import { useAuth } from '@contexts/AuthProvider';
+import { useAuth } from '@/contexts/AuthProvider';
 
 import { LoadingPage } from './Loading';
 
