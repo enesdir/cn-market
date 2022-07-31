@@ -14,7 +14,7 @@ import { useRouter } from 'next/router';
 import React from 'react';
 import { HiChevronDown, HiMoon, HiOutlineLogout, HiOutlinePresentationChartLine, HiSun } from 'react-icons/hi';
 
-import { useAuth } from '@/contexts/AuthProvider';
+import { useAuth } from '@/features/auth/';
 
 export default function UserMenu() {
   const { colorMode, toggleColorMode } = useColorMode();

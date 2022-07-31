@@ -5,14 +5,9 @@ import { NextSeo } from 'next-seo';
 import { useState } from 'react';
 import { HiOutlineMail } from 'react-icons/hi';
 
-import { useAuth } from '@/contexts/AuthProvider';
-
-import AuthLayout from '@/components/auth/AuthLayout';
-import { AuthLayoutLink } from '@/components/auth/AuthLayoutLink';
-import LoginProviders from '@/components/auth/LoginProviders';
-import { PasswordField } from '@/components/auth/PasswordField';
 import { InputWithLeftElement } from '@/components/InputWithLeftElement';
 import { AnimatedLogo } from '@/components/Logo/';
+import { AuthLayout, AuthLayoutLink, PasswordField, SignInProviders, useAuth } from '@/features/auth/';
 
 type LoginFormType = {
   email: string;
@@ -95,7 +90,7 @@ export default function Login() {
           </Text>
         </Stack>
       </Stack>
-      <LoginProviders />
+      <SignInProviders />
     </AuthLayout>
   );
 }

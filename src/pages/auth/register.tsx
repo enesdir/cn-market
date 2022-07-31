@@ -3,16 +3,11 @@ import { useFormik } from 'formik';
 import { useRouter } from 'next/router';
 import { NextSeo } from 'next-seo';
 import { useState } from 'react';
-import { HiOutlineMail } from 'react-icons/hi';
+import { HiOutlineMail, HiOutlineUser } from 'react-icons/hi';
 
-import { useAuth } from '@/contexts/AuthProvider';
-
-import AuthLayout from '@/components/auth/AuthLayout';
-import { AuthLayoutLink } from '@/components/auth/AuthLayoutLink';
-import SignInProviders from '@/components/auth/LoginProviders';
-import { PasswordField } from '@/components/auth/PasswordField';
 import { InputWithLeftElement } from '@/components/InputWithLeftElement';
 import { AnimatedLogo } from '@/components/Logo/';
+import { AuthLayout, AuthLayoutLink, PasswordField, SignInProviders, useAuth } from '@/features/auth/';
 
 type RegisterFormType = {
   name: string;
@@ -91,7 +86,7 @@ export default function Register() {
             onChange={handleChange}
             formControlprops={{ id: 'name', isInvalid: false }}
             inputLabel="What's your name?"
-            icon={HiOutlineMail}
+            icon={HiOutlineUser}
           />
           <InputWithLeftElement
             name="email"

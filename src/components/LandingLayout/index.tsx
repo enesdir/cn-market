@@ -16,7 +16,7 @@ export default function LandingLayout({ logoLabel, basket, children, footer }: L
   return (
     <>
       <Navbar logoLabel={logoLabel} basket={basket} />
-      <Container maxW="7xl" direction="column" alignItems="center" justifyContent="center" minH="70vh">
+      <Container maxW="7xl" alignItems="center" justifyContent="center" minH="70vh">
         {children}
       </Container>
       {footer && <Footer />}

@@ -4,11 +4,10 @@ import React from 'react';
 
 import '@/styles/globals.css';
 
-import { AuthProvider } from '@/contexts/AuthProvider';
-import { StoreProvider } from '@/contexts/StoreProvider';
 import { ThemeProvider } from '@/contexts/ThemeProvider';
 
-import RouteWrapper from '@/components/RouteWrapper';
+import { AuthProvider, RouteWrapper } from '@/features/auth/';
+import { StoreProvider } from '@/features/store';
 
 import defaultSEOConfig from '../../next-seo.config';
 

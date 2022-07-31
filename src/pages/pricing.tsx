@@ -1,7 +1,7 @@
 import { Box, Flex, Grid, Heading, Stack, Text, VStack } from '@chakra-ui/react';
 
 import LandingLayout from '@/components/LandingLayout';
-import { PricingCard } from '@/components/PricingCard';
+import { PricingCard } from '@/features/landing';
 
 const prices = [
   {

@@ -1,12 +1,10 @@
 import { Box, Flex, Heading, HStack, Stack, useColorModeValue as mode } from '@chakra-ui/react';
 import * as React from 'react';
 
-import { useStore } from '@/contexts/StoreProvider';
-
-import CartItem from '@/components/cart/CartItem';
-import { CartOrderSummary } from '@/components/cart/CartOrderSummary';
 import LandingLayout from '@/components/LandingLayout';
 import { NextChakraLink } from '@/components/NextChakraLink';
+import { CartItem, CartOrderSummary } from '@/features/cart/';
+import { useStore } from '@/features/store';
 
 function Cart() {
   const { products } = useStore();
@@ -17,11 +15,11 @@ function Cart() {
         <Stack direction={{ base: 'column', lg: 'row' }} align={{ lg: 'flex-start' }} spacing={{ base: '8', md: '16' }}>
           <Stack spacing={{ base: '8', md: '10' }} flex="2">
             <Heading fontSize="2xl" fontWeight="extrabold">
-              Shopping Cart ({cartItems.length} products)
+              Shopping Cart ({cartItems?.length} products)
             </Heading>
 
             <Stack spacing="6">
-              {cartItems!.map((product) => (
+              {cartItems?.map((product) => (
                 <CartItem key={product.id} product={product} />
               ))}
             </Stack>

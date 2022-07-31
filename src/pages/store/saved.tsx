@@ -5,14 +5,12 @@
 // import { searchTags } from '../../mockDB/db';
 import { AnimatePresence } from 'framer-motion';
 
+import LandingLayout from '@/components/LandingLayout';
+import Main from '@/features/products/components/Main';
 // import LoadingPage from '@components/LoadingPage';
 // import Main from '@components/product/Main';
 // import ProductsGrid from '@components/product/ProductGrid';
-import { useStore } from '@/contexts/StoreProvider';
-
-import LandingLayout from '@/components/LandingLayout';
-import Main from '@/components/product/Main';
-import SavedItems from '@/components/store/SavedItems';
+import { SavedItems, useStore } from '@/features/store';
 
 const StoreSaved = () => {
   const { isLoading } = useStore();

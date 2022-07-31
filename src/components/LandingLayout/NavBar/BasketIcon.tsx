@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import React from 'react';
 import { HiOutlineShoppingCart } from 'react-icons/hi';
 
-import { useStore } from '@/contexts/StoreProvider';
+import { useStore } from '@/features/store';
 
 export default function BasketIcon() {
   const { cartItemCount } = useStore();

@@ -3,10 +3,10 @@ import { Suspense } from 'react';
 
 import LandingLayout from '@/components/LandingLayout';
 import { LoadingProduct } from '@/components/Loading/';
-import Main from '@/components/product/Main';
+import Main from '@/features/products/components/Main';
 // import PopularItemsList from '@components/store/Store';
 
-const PopularItemsList = dynamic(() => import('../../components/store/Store'), {
+const PopularItemsList = dynamic(() => import('@/features/store/components/PopularItemsList'), {
   suspense: true,
 });
 const Store = () => {

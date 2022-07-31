@@ -1,7 +1,7 @@
 import { Heading } from '@chakra-ui/react';
 import React from 'react';
 
-import AuthWrapper from '@/components/AuthWrapper';
+import { AuthWrapper } from '@/features/auth/';
 
 function DashBoard() {
   return (
