@@ -43,11 +43,11 @@ const Modules = () => {
     },
   ];
   return (
-    <Box color="blackAlpha.600" mt="7">
-      <Text textTransform="uppercase" fontSize="smaller" fontWeight="extrabold" mb="4">
+    <Box mt="7">
+      <Text textTransform="uppercase" fontSize="md" fontWeight="extrabold" mb="4">
         All Modules
       </Text>
-      <Flex wrap="wrap">
+      <Flex wrap="wrap" justifyContent="center">
         {modules.map((mod) => (
           <Module key={mod.text} text={mod.text} icon={mod.icon} />
         ))}

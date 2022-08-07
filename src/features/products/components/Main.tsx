@@ -1,4 +1,16 @@
-import { Box, Flex, FormControl, FormLabel, HStack, Select, Tab, TabList, Tabs, useMediaQuery } from '@chakra-ui/react';
+import {
+  Box,
+  Flex,
+  FormControl,
+  FormLabel,
+  HStack,
+  Select,
+  Tab,
+  TabList,
+  Tabs,
+  useColorModeValue,
+  useMediaQuery,
+} from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { ReactNode } from 'react';
 
@@ -60,11 +72,10 @@ const Main = ({ children }: Props) => {
             mb={5}
             defaultIndex={router.pathname === '/store' ? 0 : router.pathname === '/store/saved' ? 1 : undefined}
           >
-            <TabList bg="blue.50" rounded="md">
+            <TabList bg={useColorModeValue('blue.50', 'blue.300')} rounded="md">
               <Tab
                 _selected={{
-                  color: 'blue.400',
-
+                  color: useColorModeValue('blue.400', 'blue.900'),
                   rounded: 'base',
                   boxShadow: 'base',
                 }}
@@ -75,8 +86,7 @@ const Main = ({ children }: Props) => {
               </Tab>
               <Tab
                 _selected={{
-                  color: 'blue.400',
-
+                  color: useColorModeValue('blue.400', 'blue.900'),
                   rounded: 'base',
                   boxShadow: 'base',
                 }}
@@ -87,8 +97,7 @@ const Main = ({ children }: Props) => {
               </Tab>
               <Tab
                 _selected={{
-                  color: 'blue.400',
-
+                  color: useColorModeValue('blue.400', 'blue.900'),
                   rounded: 'base',
                   boxShadow: 'base',
                 }}
